@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+ 
+ <title>Calculator</title>
+<meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <!--<script type="text/javascript" src="js/jquery-2.1.4.js"></script> -->
+    
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".number,.symbol").click(function(){
+              var v = $(this).val();
+                 
+              $("#result").val($("#result").val() + v);      
+            });
+            $(".equals").on("click", function(){
+            var calc =$('#result').val();
+                 
+               
+            $("#result").val(eval(calc));
+            });
+            
+           $( ".number,.symbol,.equals" ).height( "40px" ).width( "40px" );    
+            $("#container").css({backgroundColor: "green", border: "dashed" }).width("250px").height("220px");
+            $("#two, #nine").css({backgroundColor: 'blue', border: "solid", margin:"auto"});
+           //$("#container").css({margin: "auto";});
+            $("#three, #seven").css({backgroundColor: '#FFFF66', border:"ridge"});
+            $("#six, #one").css({backgroundColor: 'brown', border: "dotted"});
+            $("#eight, #zero").css({backgroundColor: 'pink', border: "groove"});
+            $("#five").css({backgroundColor: 'purple', border: "inset"});
+            $("#four, #period").css({backgroundColor: 'gray', border: "outset"});
+            $("#add, #multiply").css({backgroundColor: 'orange', border: "double"});
+            $("#subtract").css({backgroundColor: '#FF0000', border: "double"});
+            $("#divide, #equals").css({backgroundColor: '#66FF33', border: "none"});
+            $("#result").css({backgroundColor: '##F0F0F0'});
+        });
+    </script>. 
+</head>
+
+<body>
+	<input type="text"   id="result">
+    <br>
+    <div id="container">
+        <input type="button" id="seven" value="7" class="number">
+        <input type="button" id="eight" value="8" class="number">
+        <input type="button" id="nine" value="9" class="number">
+        <input type="button" id="divide" value="/" class="symbol">
+        <br>
+        <input type="button" id="four" value="4" class="number">
+        <input type="button" id="five" value="5" class="number">
+        <input type="button" id="six" value="6" class="number">
+        <input type="button" id="multiply" value="*" class="symbol">
+        <br>
+        <input type="button" id="one" value="1" class="number">
+        <input type="button" id="two" value="2" class="number">
+        <input type="button" id="three" value="3" class="number">
+        <input type="button" id="subtract" value="-" class="symbol">
+        <br>
+        <input type="button" id="zero" value="0" class="number">
+        <input type="button" id="period" value="." class="symbol">
+        <input type="button" id="add" value="+" class="symbol">
+    </div>
+    <input type="button" id="equals" value="=" class="equals">
+</body>
+</html>

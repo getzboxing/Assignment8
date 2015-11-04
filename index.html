@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Untitled Document</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <!--<script type="text/javascript" src="js/jquery-2.1.4.js"></script> -->
+    
+    <script type="text/javascript">
+        $("document").ready(function(){
+            
+            $("#myButton").click(function(event) {	alert("Hello, first click.");});
+
+            $("#myButtonA").bind("click", function(event) {	alert("two was clicked.");});
+             $("#myButtonB").on("click", function(event) {	alert("three was clicked.");});
+            //no. 4
+            $("div").on("click", "button", function(event) {	alert( "Hello." );});
+            
+            //no. 5
+            
+            $("#myId").css("background", "silver").width("400px").height("400px");
+           
+           //no.6
+            $("#myId").on({mouseenter: function() {alert("Hovered over the div!");$("span").html("on mouseenter");},	
+                           mouseleave: function() {alert("The mouse left the div!"); $("span").html("on mouseLeave!");},	
+                           click: function() {alert("You clicked on the div!"); $("span").html("on click");}});
+            
+            //no.7
+            $( "a" ).click(function( event ) {
+  event.preventDefault();
+                $("a").css("color", "red");
+                alert(''+event.currentTarget + " triggered the event!");
+            });
+            
+            //no.8
+            $("#myId2").css("background", "orange").width("200px").height("200px");
+             
+          $(window).resize(function() {	$("#myId2").text('Window Width: '+$(window).width() +"\nWindow Height: " +$(window).height());});
+            
+            //no.9
+          $("#myId3").width("120px").height("30px");
+            $("#myId3").focusin(function(){
+                $("#myId3").css("background", "#D3D3D3");
+            });
+            $("#myId3").focusout(function(){
+                $("#myId3").css("background", "#FFFFFF");
+            });
+            
+            //no.10
+            $("#name").width("150px").height("30px").attr("required","true");
+$("#email").width("150px").height("30px").attr("required","true");
+});</script>
+             
+            
+</head>
+<body>
+<button id="myButton" >button one click</button>
+<br>
+<button id="myButtonA" >button two bind</button>
+<br>
+<button id="myButtonB" >button three on</button>
+
+<!-- no. 4 -->
+<div>
+    <button id="myButtonL" >button left click</button> 
+    <button id="myButtonR" >button right click</button>
+</div>
+<div id="myId"><span>text</span></div>   
+<!--<div 1d="myId2"><span>text</span></div>  -->
+<!-- no. 7-->
+<li><a href="https://www.google.com">browse Google</a></li> 
+ 
+ <!-- no. 8-->
+ <div id="myId2">
+     </div>
+
+<!-- no. 9-->
+    <input id="myId3"></input>
+    
+<!-- no. 10-->
+    <form>
+        <feildset>
+            <label for="name">Name: </label><input id="name" type="text"></input>
+            <label for="email">email: </label><input id="email" type="email"> <br>
+           <input type="submit">
+        </feildset>
+    </form>
+
+</body>
+</body>
+</html>
