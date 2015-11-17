@@ -1,0 +1,14 @@
+#slides img{
+    position:absolute;
+    margin: auto;
+}
+#selectable{
+    text-align: center;
+    position:absolute;
+    bottom:270px;
+    }
+
+#selectable li{
+    display: inline-block;
+    bottom: 20px;
+}

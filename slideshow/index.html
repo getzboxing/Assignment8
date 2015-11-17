@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Untitled Document</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    
+   <script type="text/javascript">
+        $(document).ready(function(){
+            
+            $("#slides img").slice(1).hide();
+            var slideIndex=0, topIndex=$("#slides img").length-1;
+            setInterval(function(){
+                $("#slides img").eq(slideIndex).fadeOut(1000);
+                if (slideIndex<topIndex){
+                    $("#slides img").eq(slideIndex).next().fadeIn(1000);
+                    slideIndex++;
+                }
+                else {
+                    $("#slides img").eq(0).fadeIn(1000);
+                    slideIndex=0;
+                }
+            }, 3000);
+            
+/*setInterval(function(){
+                $("#slides img").first().fadeOut(800).next().fadeIn(800).end().appendTo("#slides");
+                
+            }, 2600);*/
+            
+ $("#selectable li").each           
+            
+        }); 
+    </script>
+    
+     
+    <link rel="stylesheet" type="text/css" href="mystyles.css">
+</head>
+<body>
+    <main>
+        <h1>Best Slide Show Eva</h1>
+        <div id="slides">
+            <img src="images/pic1.jpeg" alt="slide one">
+            <img src="images/pic2.jpeg" alt="slide two">
+            <img src="images/pic3.jpeg" alt="slide three">
+            <img src="images/pic4.jpeg" alt="slide four">
+            <img src="images/pic5.jpeg" alt="slide five">
+            
+        </div>
+     
+        <div> 
+        <ol id="selectable">
+  <li class="ui-widget-content">01</li>
+  <li class="ui-widget-content">02</li>
+  <li class="ui-widget-content">03</li>
+  <li class="ui-widget-content">04</li>
+  <li class="ui-widget-content">05</li>
+   
+</ol>
+   </div>
+    </main>
+
+</body>
+</html>
